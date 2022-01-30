@@ -186,8 +186,12 @@ body {
   height: 50%;
   width: 100%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
+}
+
+.On-Off {
+  display: contents;
 }
 
 .pokeindex-left__buttons .buttons .buttons-circle {
@@ -198,6 +202,12 @@ body {
   border-radius: 50%;
   position: relative;
   margin-right: 5%;
+}
+
+.buttons-circle > p {
+  margin: 25%;
+  text-decoration: none;
+  color: grey;
 }
 
 .pokeindex-left__buttons .buttons .buttons-quad {
@@ -235,7 +245,7 @@ body {
 
 .pokeindex-left__buttons .controller .controller-touch {
   height: 75%;
-  width: 40%;
+  width: 50%;
   border: 2px solid var(--bg-black);
   background-color: var(--bg-lightgreen);
   border-radius: 5px;
@@ -303,11 +313,13 @@ body {
   height: 65%;
   width: 80%;
   border: 2px solid var(--bg-black);
-  background-color: var(--bg-darkgray);
   left: 50%;
   transform: translateX(-50%);
   position: relative;
   border-radius: 10px;
+}
+.gray {
+  background-color: var(--bg-darkgray);
 }
 
 .pokeindex-left__screen .status {
@@ -573,4 +585,17 @@ body {
   background-color: var(--bg-darkgray);
   position: relative;
   border-radius: 5px;
+}
+
+/******************************** PokedexOn ********************************/
+.pokeindex-left__screen .status .green {
+  height: 50%;
+  width: 12%;
+  border: 2px solid var(--bg-black);
+  background-color: var(--bg-lightgreen);
+  border-radius: 50%;
+  position: relative;
+}
+.green {
+  background-color: var(--bg-lightgreen);
 }

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const PokedexTemplate = () => {
   return (
     <Fragment>
-      <Link to="/Open">
+      <Link to="/OpenOff">
         <div class="pokeindex">
           <div class="pokeindex-left">
             <div class="pokeindex-left__top">
