@@ -6,5 +6,5 @@ Triar la temàtica del projecte, així com els passos per a dur-lo a terme. Nom�
 
 <img
     src="./src/img/LayoutOff.png"
-    width="25rem"
+    width="45rem"
 />
