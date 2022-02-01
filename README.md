@@ -5,7 +5,6 @@ Triar la temàtica del projecte, així com els passos per a dur-lo a terme. Nom�
 ## En Contrucción:
 
 <img
-         src="./img/LayoutOff.png"
-         width="100wh" 
-         alt="Firamdo Alfonso V."
-        />
+    src="./src/img/LayoutOff.png"
+    width="100wh" 
+/>
