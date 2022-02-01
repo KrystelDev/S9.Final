@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap");
 
 body {
+  text-align: center;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -31,8 +32,8 @@ body {
   --bg-shadow: rgba(116, 117, 116, 0.5);
 }
 
-/* ********************************** PokedexTemplate ********************************** */
-
+/******************************* Start All pages of Pokedex ********************************/
+/* Layout based on: https://codepen.io/alinas_view/pen/OJyKgZW */
 .pokeindex * {
   position: absolute;
 }
@@ -249,44 +250,100 @@ body {
   border: 2px solid var(--bg-black);
   background-color: var(--bg-lightgreen);
   border-radius: 5px;
-  position: relative;
+  left: 10px;
 }
 
-.pokeindex-left__buttons .controller .controller-joystick {
-  height: 30%;
-  width: 30%;
-  border: 2px solid var(--bg-black);
+/* ***** Start component joy-stick ***** */
+/* Layout based on: https://codepen.io/daniel-snows/pen/JjPLNZp */
+.joy-stick {
+  z-index: 99;
+  width: 168px;
+  height: 167px;
+  left: 97px;
+  top: -57px;
+}
+
+.joy-stick button {
   background-color: var(--bg-darkgray);
-  border-radius: 5px;
-  position: relative;
-  margin-left: 5%;
-}
-
-.pokeindex-left__buttons .controller .controller-joystick::before {
-  content: "";
+  width: 32px;
+  height: 32px;
   position: absolute;
-  display: block;
-  height: 100%;
-  width: 100%;
-  border: 2px solid var(--bg-black);
-  background-color: var(--bg-darkgray);
-  border-radius: 5px;
+  z-index: 9;
+}
+
+.joy-stick button:after {
+  content: "◂";
+  font-size: 30px;
+  font-family: sans-serif;
+  color: var(--bg-shadow);
+  position: absolute;
+  line-height: 0;
+}
+.joy-stick button.left:after {
+  left: 5px;
+  top: 8px;
+}
+.joy-stick button.right:after {
+  right: 5px;
+  top: 12px;
+  transform: rotate(180deg);
+}
+.joy-stick button.top:after {
+  left: 6px;
+  top: 12px;
   transform: rotate(90deg);
-  left: -2%;
-  top: -10%;
+}
+.joy-stick button.bottom:after {
+  right: 4px;
+  bottom: 12px;
+  transform: rotate(-90deg);
 }
 
-.pokeindex-left__buttons .controller .controller-joystick::after {
-  content: "";
-  position: absolute;
-  display: block;
-  height: 100%;
-  width: 100%;
-  background-color: var(--bg-darkgray);
-  border-radius: 5px;
-  left: 0;
-  top: 0;
+.joy-stick button.left {
+  border-right: none !important;
+  top: 50%;
+  margin-top: -16px;
+  left: 38px;
 }
+.joy-stick button.top {
+  border-bottom: none !important;
+  left: 50%;
+  margin-left: -16px;
+  top: 38px;
+}
+.joy-stick button.right {
+  border-left: none !important;
+  top: 50%;
+  margin-top: -16px;
+  right: 38px;
+}
+.joy-stick button.bottom {
+  border-top: none !important;
+  left: 50%;
+  margin-left: -16px;
+  bottom: 38px;
+}
+.joy-stick:after,
+.joy-stick:before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-color: var(--bg-darkgray);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -15px;
+  z-index: 1;
+}
+
+.joy-stick:before {
+  border-radius: 50%;
+  border: 3px solid var(--bg-shadow);
+  z-index: 99;
+  box-sizing: border-box;
+  transform: scale(0.8);
+}
+/* ***** Finished component joy-stick ***** */
 
 .pokeindex-left__screen .dots {
   height: 4%;
@@ -578,14 +635,16 @@ body {
   align-items: flex-start;
 }
 
-.pokeindex-right__buttons-double span {
+.pokeindex-right__buttons-double button {
   width: 40%;
   height: 45%;
   border: 2px solid var(--bg-black);
   background-color: var(--bg-darkgray);
   position: relative;
   border-radius: 5px;
+  color: grey;
 }
+/****************************** Finished All pages of Pokedex *******************************/
 
 /******************************** PokedexOn ********************************/
 .pokeindex-left__screen .status .green {

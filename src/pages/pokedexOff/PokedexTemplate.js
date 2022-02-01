@@ -1,8 +1,6 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 
-// Fuente de plantilla Layout : https://codepen.io/alinas_view/pen/OJyKgZW
-
 const PokedexTemplate = () => {
   return (
     <Fragment>
@@ -42,7 +40,20 @@ const PokedexTemplate = () => {
             </div>
             <div className="controller">
               <div className="controller-touch"></div>
-              <div className="controller-joystick"></div>
+              <div class="joy-stick">
+                <button class="left">
+                  <i></i>
+                </button>
+                <button class="top">
+                  <i></i>
+                </button>
+                <button class="right">
+                  <i></i>
+                </button>
+                <button class="bottom">
+                  <i></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -79,8 +90,8 @@ const PokedexTemplate = () => {
             <div className="light"></div>
           </div>
           <div className="pokeindex-right__buttons-double">
-            <span></span>
-            <span></span>
+            <button>Select</button>
+            <button>List</button>
           </div>
         </div>
       </div>
