@@ -1,5 +1,7 @@
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
+import SelectOrNot from "../../components/SelectOrNot";
+import JoyStick from "../../components/JoyStick";
+import OnOff from "../../components/OnOff";
 
 // Fuente de plantilla Layout : https://codepen.io/alinas_view/pen/OJyKgZW
 
@@ -30,11 +32,7 @@ const PokedexTemplate = () => {
           </div>
           <div className="pokeindex-left__buttons">
             <div className="buttons">
-              <Link to="/OpenOff" className="On-Off">
-                <div className="buttons-circle">
-                  <p>Off</p>
-                </div>
-              </Link>
+              <OnOff />
               <div className="buttons-quad">
                 <span></span>
                 <span></span>
@@ -46,20 +44,7 @@ const PokedexTemplate = () => {
                 placeholder="Write here"
                 className="controller-touch"
               ></input>
-              <div class="joy-stick">
-                <button class="left">
-                  <i></i>
-                </button>
-                <button class="top">
-                  <i></i>
-                </button>
-                <button class="right">
-                  <i></i>
-                </button>
-                <button class="bottom">
-                  <i></i>
-                </button>
-              </div>
+              <JoyStick />
             </div>
           </div>
         </div>
@@ -95,10 +80,7 @@ const PokedexTemplate = () => {
             </div>
             <div className="light"></div>
           </div>
-          <div className="pokeindex-right__buttons-double">
-            <button>Select</button>
-            <button>List</button>
-          </div>
+          <SelectOrNot />
         </div>
       </div>
     </Fragment>

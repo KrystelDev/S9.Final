@@ -13,7 +13,7 @@ body {
   background-color: #e5cfaf;
 }
 
-/* ****************************** Nuestros colores básicos ****************************** */
+/* ****************************** Our basic colors ****************************** */
 
 :root {
   --bg-rose: #ffabd4;
@@ -269,6 +269,7 @@ body {
   height: 32px;
   position: absolute;
   z-index: 9;
+  cursor: pointer;
 }
 
 .joy-stick button:after {
@@ -643,6 +644,7 @@ body {
   position: relative;
   border-radius: 5px;
   color: grey;
+  cursor: pointer;
 }
 /****************************** Finished All pages of Pokedex *******************************/
 
