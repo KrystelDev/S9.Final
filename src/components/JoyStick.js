@@ -2,17 +2,17 @@ const JoyStick = () => {
   // function only whenisOn === true (context)
 
   return (
-    <div class="joy-stick">
-      <button class="left">
+    <div className="joy-stick">
+      <button className="left">
         <i></i>
       </button>
-      <button class="top">
+      <button className="top">
         <i></i>
       </button>
-      <button class="right">
+      <button className="right">
         <i></i>
       </button>
-      <button class="bottom">
+      <button className="bottom">
         <i></i>
       </button>
     </div>

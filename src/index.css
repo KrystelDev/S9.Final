@@ -160,8 +160,8 @@ body {
 }
 
 .pokeindex-left__screen {
-  height: 50%;
-  width: 80%;
+  height: 60%;
+  width: 85%;
   border: 2px solid var(--bg-black);
   background-color: var(--bg-white);
   left: 50%;
@@ -193,6 +193,7 @@ body {
 
 .On-Off {
   display: contents;
+  cursor: pointer;
 }
 
 .pokeindex-left__buttons .buttons .buttons-circle {
@@ -206,9 +207,11 @@ body {
 }
 
 .buttons-circle > p {
-  margin: 25%;
+  margin-left: 30%;
   text-decoration: none;
   color: grey;
+  font-size: x-large;
+  margin: 0.4rem 0.3rem;
 }
 
 .pokeindex-left__buttons .buttons .buttons-quad {
@@ -368,15 +371,14 @@ body {
 }
 
 .pokeindex-left__screen .screen {
-  height: 65%;
-  width: 80%;
+  height: 70%;
+  width: 90%;
   border: 2px solid var(--bg-black);
   left: 50%;
+  top: 2%;
   transform: translateX(-50%);
   position: relative;
   border-radius: 10px;
-}
-.gray {
   background-color: var(--bg-darkgray);
 }
 
@@ -497,10 +499,11 @@ body {
 
 .pokeindex-right__screen {
   width: 80%;
-  height: 25%;
+  height: 50%;
   border: 2px solid var(--bg-black);
   background-color: var(--bg-darkgray);
   left: 50%;
+  top: 4%;
   transform: translateX(-50%);
   border-radius: 10px;
   position: relative;
@@ -648,7 +651,7 @@ body {
 }
 /****************************** Finished All pages of Pokedex *******************************/
 
-/******************************** PokedexOn ********************************/
+/* ******************************* PokedexOn *******************************
 .pokeindex-left__screen .status .green {
   height: 50%;
   width: 12%;
@@ -659,4 +662,4 @@ body {
 }
 .green {
   background-color: var(--bg-lightgreen);
-}
+} */

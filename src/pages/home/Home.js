@@ -6,16 +6,16 @@ import { Link } from "react-router-dom";
 const PokedexTemplate = () => {
   return (
     <Fragment>
-      <Link to="/OpenOff">
-        <div class="pokeindex">
-          <div class="pokeindex-left">
-            <div class="pokeindex-left__top">
-              <div class="circle-big"></div>
-              <div class="circle-small"></div>
+      <Link to="/Open">
+        <div className="pokeindex">
+          <div className="pokeindex-left">
+            <div className="pokeindex-left__top">
+              <div className="circle-big"></div>
+              <div className="circle-small"></div>
             </div>
-            <div class="pokeindex-left__screen">PORTADA</div>
+            <div className="pokeindex-left__screen">PORTADA</div>
           </div>
-          <div class="pokeindex-middle"></div>
+          <div className="pokeindex-middle"></div>
         </div>
       </Link>
     </Fragment>

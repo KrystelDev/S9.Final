@@ -1,9 +1,51 @@
-import { Fragment } from "react";
+import { Fragment, useState, useEffect } from "react";
 import SelectOrNot from "../../components/SelectOrNot";
 import JoyStick from "../../components/JoyStick";
 import OnOff from "../../components/OnOff";
+import styled from "styled-components";
+
+let Screen = styled.div``;
+let Light = styled.div``;
 
 const PokedexTemplate = () => {
+  const [isOn, setIsOn] = useState(false);
+  const [tag, setTag] = useState("On");
+  const [placeholder, setPlaceholder] = useState("");
+
+  function changeIsOn() {
+    if (isOn) {
+      setIsOn(false);
+      setTag("On");
+    } else {
+      setIsOn(true);
+      setTag("Off");
+      setPlaceholder("Write here");
+    }
+  }
+
+  useEffect(() => {
+    console.log(isOn);
+    switch (!isOn) {
+      case true:
+        Screen = styled.div`
+          background-color: var(--bg-lightgreen) !important;
+        `;
+        Light = styled.div`
+          background-color: var(--bg-lightgreen) !important;
+        `;
+        break;
+
+      default:
+        Screen = styled.div`
+          background-color: var(--bg-darkgray);
+        `;
+        Light = styled.div`
+          background-color: var(--bg-red);
+        `;
+        break;
+    }
+  }, [isOn]);
+
   return (
     <Fragment>
       <div className="pokeindex">
@@ -17,9 +59,9 @@ const PokedexTemplate = () => {
               <span></span>
               <span></span>
             </div>
-            <div className="screen gray"></div>
+            <Screen className="pokeindex-left__screen screen"></Screen>
             <div className="status">
-              <div className="status-light"></div>
+              <Light className="status-light"></Light>
               <div className="status-sound">
                 <span></span>
                 <span></span>
@@ -30,17 +72,21 @@ const PokedexTemplate = () => {
           </div>
           <div className="pokeindex-left__buttons">
             <div className="buttons">
-              <OnOff />
+              <OnOff tag={tag} changeIsOn={changeIsOn} />
             </div>
             <div className="controller">
-              <div className="controller-touch"></div>
+              <input
+                type="text"
+                placeholder={placeholder}
+                className="controller-touch"
+              ></input>
               <JoyStick />
             </div>
           </div>
         </div>
         <div className="pokeindex-middle"></div>
         <div className="pokeindex-right">
-          <div className="pokeindex-right__screen"></div>
+          <Screen className="pokeindex-right__screen"></Screen>
           <div className="pokeindex-right__buttons">
             <span></span>
             <span></span>

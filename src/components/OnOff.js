@@ -1,15 +1,20 @@
-import { Link } from "react-router-dom";
+// import { useState } from "react";
 
-const OnOff = () => {
-  // function only when isOn === true (context)
-  // isOn === true {to="/OpenOff"} else {to="/OpenOn" }
+const OnOff = ({ tag, changeIsOn }) => {
+  // const [stateIsOn, setstateIsOn] = useState("Off");
+
+  // if (isOn) {
+  //   setstateIsOn("On");
+  // } else {
+  //   setstateIsOn("Off");
+  // }
 
   return (
-    <Link to="/OpenOff" className="On-Off">
+    <button type="button" onClick={changeIsOn} className="On-Off">
       <div className="buttons-circle">
-        <p>Off</p>
+        <p>{tag}</p>
       </div>
-    </Link>
+    </button>
   );
 };
 
