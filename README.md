@@ -17,6 +17,6 @@ Triar la temàtica del projecte, així com els passos per a dur-lo a terme. Nom�
 ## En Contrucción:
 
 <img
-    src="./src/img/LayoutOff.png"
-    width="550px"
+    src="./src/img/LayoutOn.png"
+    width="700px"
 />
