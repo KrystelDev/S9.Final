@@ -3,14 +3,12 @@
 
 body {
   text-align: center;
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("data:image/svg+xml,%3Csvg width='76' height='76' viewBox='0 0 76 76' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='76' height='76' fill='%23E5CFAF'/%3E%3Ccircle cx='38' cy='38' r='23' stroke='%23C07C2B' stroke-width='2'/%3E%3Cline x1='14' y1='37.558' x2='31.8605' y2='37.558' stroke='%23C07C2B' stroke-width='2'/%3E%3Cline x1='43.0233' y1='37.558' x2='60.8837' y2='37.558' stroke='%23C07C2B' stroke-width='2'/%3E%3Ccircle cx='37.4419' cy='37.4418' r='5.69767' stroke='%23C07C2B' stroke-width='2'/%3E%3Ccircle cx='37.4418' cy='37.4418' r='1.73256' stroke='%23C07C2B'/%3E%3C/svg%3E");
-  background-color: #e5cfaf;
 }
 
 /* ****************************** Our basic colors ****************************** */
@@ -169,8 +167,15 @@ body {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
-  border-radius: 5px 5px 5px 15%;
+  border-radius: 5px 5px 5px 5px;
   position: relative;
+}
+
+.viewList {
+  position: relative;
+  border: 3px solid;
+  padding: 10px;
+  width: -webkit-fill-available;
 }
 
 .pokeindex-left__buttons {
@@ -380,6 +385,10 @@ body {
   position: relative;
   border-radius: 10px;
   background-color: var(--bg-darkgray);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: scroll;
 }
 
 .pokeindex-left__screen .status {
@@ -390,11 +399,11 @@ body {
   position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .pokeindex-left__screen .status .status-light {
-  height: 50%;
+  height: 45%;
   width: 12%;
   border: 2px solid var(--bg-black);
   background-color: var(--bg-red);
@@ -605,7 +614,7 @@ body {
 }
 
 .pokeindex-right__buttons-triple .light {
-  height: 55%;
+  height: 60%;
   width: 16%;
   border: 2px solid var(--bg-black);
   background-color: var(--bg-orange);

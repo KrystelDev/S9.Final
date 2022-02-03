@@ -1,8 +1,8 @@
-import { Fragment, useState, useEffect } from "react";
-import SelectOrNot from "../../components/SelectOrNot";
-import JoyStick from "../../components/JoyStick";
-import OnOff from "../../components/OnOff";
+import { useState, useEffect } from "react";
+import PokeLeft from "../../components/PokeLeft";
+import PokeRight from "../../components/PokeRight";
 import styled from "styled-components";
+import axios from "axios";
 
 let Screen = styled.div``;
 let Light = styled.div``;
@@ -11,22 +11,30 @@ const PokedexTemplate = () => {
   const [isOn, setIsOn] = useState(false);
   const [tag, setTag] = useState("On");
   const [placeholder, setPlaceholder] = useState("");
+  const [list, setList] = useState([]);
+  const [viewList, setViewList] = useState("");
 
   function changeIsOn() {
     if (isOn) {
       setIsOn(false);
-      setTag("On");
     } else {
       setIsOn(true);
-      setTag("Off");
-      setPlaceholder("Write here");
     }
   }
 
   useEffect(() => {
     console.log(isOn);
-    switch (!isOn) {
+    switch (isOn) {
       case true:
+        setViewList(
+          list.map((item, index) => (
+            <div key={index} className="viewList">
+              {item.name}
+            </div>
+          ))
+        );
+        setPlaceholder("Write here");
+        setTag("Off");
         Screen = styled.div`
           background-color: var(--bg-lightgreen) !important;
         `;
@@ -36,6 +44,9 @@ const PokedexTemplate = () => {
         break;
 
       default:
+        setViewList("");
+        setPlaceholder("");
+        setTag("On");
         Screen = styled.div`
           background-color: var(--bg-darkgray);
         `;
@@ -46,80 +57,32 @@ const PokedexTemplate = () => {
     }
   }, [isOn]);
 
+  //Array list of Pokemon
+  useEffect(() => {
+    axios({
+      url: "https://pokeapi.co/api/v2/pokemon?limit=1118&offset=0",
+    })
+      .then((response) => {
+        setList(response.data.results);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [list]);
+
   return (
-    <Fragment>
-      <div className="pokeindex">
-        <div className="pokeindex-left">
-          <div className="pokeindex-left__top">
-            <div className="circle-big"></div>
-            <div className="circle-small"></div>
-          </div>
-          <div className="pokeindex-left__screen">
-            <div className="dots">
-              <span></span>
-              <span></span>
-            </div>
-            <Screen className="pokeindex-left__screen screen"></Screen>
-            <div className="status">
-              <Light className="status-light"></Light>
-              <div className="status-sound">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-          </div>
-          <div className="pokeindex-left__buttons">
-            <div className="buttons">
-              <OnOff tag={tag} changeIsOn={changeIsOn} />
-            </div>
-            <div className="controller">
-              <input
-                type="text"
-                placeholder={placeholder}
-                className="controller-touch"
-              ></input>
-              <JoyStick />
-            </div>
-          </div>
-        </div>
-        <div className="pokeindex-middle"></div>
-        <div className="pokeindex-right">
-          <Screen className="pokeindex-right__screen"></Screen>
-          <div className="pokeindex-right__buttons">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div className="pokeindex-right__buttons-quadruple">
-            <div className="dot">
-              <span></span>
-              <span></span>
-            </div>
-            <div className="button">
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-          <div className="pokeindex-right__buttons-triple">
-            <div className="button">
-              <span></span>
-              <span></span>
-            </div>
-            <div className="light"></div>
-          </div>
-          <SelectOrNot />
-        </div>
-      </div>
-    </Fragment>
+    <div className="pokeindex">
+      <PokeLeft
+        tag={tag}
+        changeIsOn={changeIsOn}
+        placeholder={placeholder}
+        viewList={viewList}
+        Screen={Screen}
+        Light={Light}
+      />
+      <div className="pokeindex-middle"></div>
+      <PokeRight Screen={Screen} />
+    </div>
   );
 };
 export default PokedexTemplate;
