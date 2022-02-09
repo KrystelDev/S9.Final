@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import JoyStick from "./JoyStick";
 import OnOff from "./OnOff";
 
@@ -8,6 +9,8 @@ const PokeLeft = ({
   placeholder,
   Screen,
   Light,
+  addPosition,
+  subtractPosition,
 }) => {
   return (
     <div className="pokeindex-left">
@@ -41,7 +44,10 @@ const PokeLeft = ({
             placeholder={placeholder}
             className="controller-touch"
           ></input>
-          <JoyStick />
+          <JoyStick
+            addPosition={addPosition}
+            subtractPosition={subtractPosition}
+          />
         </div>
       </div>
     </div>

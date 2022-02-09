@@ -3,7 +3,7 @@ import SelectOrNot from "./SelectOrNot";
 const PokeRight = ({ Screen }) => {
   return (
     <div className="pokeindex-right">
-      <Screen className="pokeindex-right__screen"> </Screen>
+      <Screen className="pokeindex-right__screen"></Screen>
       <div className="pokeindex-right__buttons">
         <span></span>
         <span></span>

@@ -173,9 +173,17 @@ body {
 
 .viewList {
   position: relative;
-  border: 3px solid;
-  padding: 10px;
+  border: 3px solid var(--bg-darkgray);
   width: -webkit-fill-available;
+  display: flex;
+  justify-content: space-around;
+  padding: 1px;
+  margin: 0;
+  border-style: dashed;
+}
+
+.viewList p {
+  position: relative;
 }
 
 .pokeindex-left__buttons {
@@ -379,15 +387,12 @@ body {
   height: 70%;
   width: 90%;
   border: 2px solid var(--bg-black);
-  left: 50%;
   top: 2%;
-  transform: translateX(-50%);
   position: relative;
   border-radius: 10px;
   background-color: var(--bg-darkgray);
   display: flex;
   justify-content: flex-start;
-  align-items: center;
   overflow: scroll;
 }
 
@@ -581,7 +586,6 @@ body {
   border-radius: 1px;
   background-color: var(--bg-darkgray);
   position: relative;
-  display: inline-block;
   margin-right: 5%;
 }
 
