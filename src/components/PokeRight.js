@@ -2,14 +2,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import SelectOrNot from "./SelectOrNot";
 
-const PokeRight = ({ Screen, position, namePokemon }) => {
+const PokeRight = ({ Screen, position }) => {
   // Selected the pokemon
   let [positionPokemon, setPositionPokemon] = useState(-1);
   let [displayPokemon, setDisplayPokemon] = useState(<div></div>);
   // Data pokemon Selected
   const baseDataURL = "https://pokeapi.co/api/v2/pokemon/";
-  const completedDataUR = baseDataURL + namePokemon;
+  const completedDataUR = baseDataURL + "pikachu";
   const [pokemon, setPokemon] = useState();
+
   //IMAGES
   //front:
   const baseImgFrontURL =
@@ -60,7 +61,7 @@ const PokeRight = ({ Screen, position, namePokemon }) => {
       setDisplayPokemon(
         <div className="screen">
           <div>
-            <p className="name">{pokemon.name}</p>
+            <p className="name">pikachu</p>
           </div>
           <div className="images">
             <div className="imgFront">

@@ -3,6 +3,7 @@ import PokeLeft from "../../components/PokeLeft";
 import PokeRight from "../../components/PokeRight";
 import styled from "styled-components";
 import axios from "axios";
+
 let Screen = styled.div``;
 let Light = styled.div``;
 
@@ -14,19 +15,16 @@ const PokedexTemplate = () => {
   const [list, setList] = useState([]);
   const [viewList, setViewList] = useState("");
   let [position, setPosition] = useState(0);
-  const pxList = -58;
-  let [numTop, setNumTop] = useState(0);
-  let [topScroll, setTopScroll] = useState("0px");
-  let [selected, setSelected] = useState({
+  const selected = {
     borderStyle: `solid`,
     borderColor: `black`,
-    top: `${topScroll}`,
-  });
-  let [noSelected, setNoSelected] = useState({
+    fontWeight: `bold`,
+    top: `${position * -58}px`,
+  };
+  const noSelected = {
     borderStyle: `dashed`,
-    top: `${topScroll}`,
-  });
-  let [namePokemon, setNamePokemon] = useState("");
+    top: `${position * -58}px`,
+  };
 
   //2- Turn on and turn off
   function changeIsOn() {
@@ -56,12 +54,9 @@ const PokedexTemplate = () => {
     if (isOn) {
       if (position == 0) {
         //   setPosition(list.length - 1);
-        //   setNumTop(-58 * list.length * -1);
       } else {
         position--;
         setPosition(position);
-        setNumTop(position * pxList);
-        // setNumTop(numTop + pxList);
       }
     }
   }
@@ -70,12 +65,9 @@ const PokedexTemplate = () => {
     if (isOn) {
       if (position == list.length - 1) {
         setPosition(0);
-        setNumTop(0);
       } else {
         position++;
         setPosition(position);
-        setNumTop(position * pxList);
-        // setNumTop(numTop - pxList);
       }
     }
   }
@@ -84,7 +76,6 @@ const PokedexTemplate = () => {
   useEffect(() => {
     switch (isOn) {
       case true:
-        setTopScroll(numTop + "px");
         setPlaceholder("Write here");
         setTag("Off");
         Screen = styled.div`
@@ -93,7 +84,6 @@ const PokedexTemplate = () => {
         Light = styled.div`
           background-color: var(--bg-lightgreen) !important;
         `;
-        setNamePokemon(list[position].name);
         setViewList(
           list.map((item, index) => {
             list[index].index = index;
@@ -124,17 +114,7 @@ const PokedexTemplate = () => {
         `;
         break;
     }
-  }, [isOn, position, numTop]);
-
-  useEffect(() => {
-    setSelected({
-      borderStyle: `solid`,
-      borderColor: `black`,
-      fontWeight: `bold`,
-      top: `${topScroll}`,
-    });
-    setNoSelected({ borderStyle: `dashed`, top: `${topScroll}` });
-  }, [numTop]);
+  }, [isOn, position]);
 
   return (
     <div className="pokeindex">
@@ -149,11 +129,7 @@ const PokedexTemplate = () => {
         subtractPosition={subtractPosition}
       />
       <div className="pokeindex-middle"></div>
-      <PokeRight
-        Screen={Screen}
-        position={position}
-        namePokemon={namePokemon}
-      />
+      <PokeRight Screen={Screen} position={position} />
     </div>
   );
 };
