@@ -1,5 +1,6 @@
 import JoyStick from "./JoyStick";
 import OnOff from "./OnOff";
+import WritePokedex from "./WritePokedex";
 
 const PokeLeft = ({
   tag,
@@ -10,6 +11,11 @@ const PokeLeft = ({
   Light,
   addPosition,
   subtractPosition,
+  list,
+  setPosition,
+  encontrar,
+  setEncontrar,
+  isOn,
 }) => {
   return (
     <div className="pokeindex-left absolute">
@@ -38,11 +44,14 @@ const PokeLeft = ({
           <OnOff tag={tag} changeIsOn={changeIsOn} />
         </div>
         <div className="controller">
-          <input
-            type="text"
+          {/* <WritePokedex
             placeholder={placeholder}
-            className="controller-touch"
-          ></input>
+            list={list}
+            setPosition={setPosition}
+            encontrar={encontrar}
+            setEncontrar={setEncontrar}
+            isOn={isOn}
+          /> */}
           <JoyStick
             addPosition={addPosition}
             subtractPosition={subtractPosition}

@@ -38,17 +38,13 @@ const PokeRight = ({
 
   // Onclick Button Select
   function viewDisplayPokemon() {
-    console.log("posició igual: ");
-    console.log(position);
-    console.log("list[position].name igual: ");
-    console.log(list[position].name);
     setNamePokemon(list[position].name);
   }
 
   //Selected images
   useEffect(() => {
-    console.log("completedDataUR : ");
-    console.log(completedDataUR);
+    console.log("namePokemon: ");
+    console.log(namePokemon);
     axios({
       url: completedDataUR,
     })

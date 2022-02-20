@@ -216,7 +216,7 @@ body {
   background-color: var(--bg-darkgray);
   border-radius: 50%;
   position: relative;
-  margin-right: 5%;
+  margin-top: 10px;
 }
 
 .buttons-circle > p {
@@ -261,21 +261,22 @@ body {
 }
 
 .pokeindex-left__buttons .controller .controller-touch {
-  height: 75%;
-  width: 50%;
+  height: 50%;
+  width: 40%;
   border: 2px solid var(--bg-black);
   background-color: var(--bg-lightgreen);
   border-radius: 5px;
-  left: 10px;
+  left: -9px;
+  top: 10px;
 }
 
 /* ***** Start component joy-stick ***** */
 /* Layout based on: https://codepen.io/daniel-snows/pen/JjPLNZp */
 .joy-stick {
   z-index: 99;
-  width: 168px;
-  height: 167px;
-  left: 97px;
+  width: 104px;
+  height: 136px;
+  left: 141px;
   top: -57px;
 }
 
@@ -320,25 +321,31 @@ body {
   border-right: none !important;
   top: 50%;
   margin-top: -16px;
-  left: 38px;
+  left: 6px;
 }
 .joy-stick button.top {
   border-bottom: none !important;
   left: 50%;
   margin-left: -16px;
-  top: 38px;
+  top: 23px;
 }
 .joy-stick button.right {
   border-left: none !important;
   top: 50%;
   margin-top: -16px;
-  right: 38px;
+  right: 6px;
+}
+joy-stick button.right {
+  border-left: none !important;
+  top: 50%;
+  margin-top: -16px;
+  right: 5px;
 }
 .joy-stick button.bottom {
   border-top: none !important;
   left: 50%;
   margin-left: -16px;
-  bottom: 38px;
+  bottom: 23px;
 }
 .joy-stick:after,
 .joy-stick:before {

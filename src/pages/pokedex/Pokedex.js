@@ -19,16 +19,17 @@ const PokedexTemplate = () => {
     borderStyle: `solid`,
     borderColor: `black`,
     fontWeight: `bold`,
-    top: `${position * -58}px`,
+    top: `${position * -59}px`,
   };
   const noSelected = {
     borderStyle: `dashed`,
-    top: `${position * -58}px`,
+    top: `${position * -59}px`,
   };
-
   // PokeRaight/Screen
   let [namePokemon, setNamePokemon] = useState("");
   let [displayPokemon, setDisplayPokemon] = useState(<div></div>);
+  // WritePokedex
+  const [encontrar, setEncontrar] = useState();
 
   //2- Turn on and turn off
   function changeIsOn() {
@@ -121,6 +122,8 @@ const PokedexTemplate = () => {
         // PokeRaight/Screen
         setNamePokemon("");
         setDisplayPokemon(<div></div>);
+        //WritePokedex
+        setEncontrar("");
         break;
     }
   }, [isOn, position]);
@@ -136,6 +139,11 @@ const PokedexTemplate = () => {
         Light={Light}
         addPosition={addPosition}
         subtractPosition={subtractPosition}
+        list={list}
+        setPosition={setPosition}
+        encontrar={encontrar}
+        setEncontrar={setEncontrar}
+        isOn={isOn}
       />
       <div className="pokeindex-middle"></div>
       <PokeRight
