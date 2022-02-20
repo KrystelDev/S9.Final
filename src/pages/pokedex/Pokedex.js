@@ -8,7 +8,7 @@ let Screen = styled.div``;
 let Light = styled.div``;
 
 const PokedexTemplate = () => {
-  // 1-
+  // 1- initialize variables
   const [isOn, setIsOn] = useState(false);
   const [tag, setTag] = useState("On");
   const [placeholder, setPlaceholder] = useState("");
@@ -25,9 +25,11 @@ const PokedexTemplate = () => {
     borderStyle: `dashed`,
     top: `${position * -58}px`,
   };
-  let [namePokemon, setNamePokemon] = useState("zapdos");
+
   // PokeRaight/Screen
+  let [namePokemon, setNamePokemon] = useState("");
   let [displayPokemon, setDisplayPokemon] = useState(<div></div>);
+
   //2- Turn on and turn off
   function changeIsOn() {
     if (isOn) {
@@ -105,16 +107,20 @@ const PokedexTemplate = () => {
         break;
 
       default:
-        setDisplayPokemon(<div></div>);
-        setViewList("");
-        setPlaceholder("");
+        //Reset all on power off
         setTag("On");
+        setPlaceholder("");
+        setViewList("");
+        setPosition(0);
         Screen = styled.div`
           background-color: var(--bg-darkgray);
         `;
         Light = styled.div`
           background-color: var(--bg-red);
         `;
+        // PokeRaight/Screen
+        setNamePokemon("");
+        setDisplayPokemon(<div></div>);
         break;
     }
   }, [isOn, position]);
