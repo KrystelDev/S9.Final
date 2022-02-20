@@ -1,15 +1,22 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import SelectOrNot from "./SelectOrNot";
+import ImagesPokemon from "./ImagesPokemon";
 
-const PokeRight = ({ Screen, position }) => {
-  // Selected the pokemon
-  let [positionPokemon, setPositionPokemon] = useState(-1);
-  let [displayPokemon, setDisplayPokemon] = useState(<div></div>);
+const PokeRight = ({
+  Screen,
+  position,
+  isOn,
+  list,
+  namePokemon,
+  setNamePokemon,
+  displayPokemon,
+  setDisplayPokemon,
+}) => {
   // Data pokemon Selected
   const baseDataURL = "https://pokeapi.co/api/v2/pokemon/";
-  const completedDataUR = baseDataURL + "pikachu";
-  const [pokemon, setPokemon] = useState();
+  const completedDataUR = baseDataURL + namePokemon;
+  let [pokemon, setPokemon] = useState();
 
   //IMAGES
   //front:
@@ -29,18 +36,23 @@ const PokeRight = ({ Screen, position }) => {
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/";
   const [completedImgShinyBackURL, setCompletedImgShinyBackURL] = useState();
 
-  //Selected view display
+  // Onclick Button Select
   function viewDisplayPokemon() {
-    setPositionPokemon(1 + position);
+    console.log("posició igual: ");
+    console.log(position);
+    console.log("list[position].name igual: ");
+    console.log(list[position].name);
+    setNamePokemon(list[position].name);
   }
 
   //Selected images
   useEffect(() => {
+    console.log("completedDataUR : ");
+    console.log(completedDataUR);
     axios({
       url: completedDataUR,
     })
       .then((response) => {
-        setPokemon(response.data);
         setCompletedImgFrontURL(baseImgFrontURL + response.data.id + ".png");
         setCompletedImgBackURL(baseImgBackURL + response.data.id + ".png");
         setCompletedImgShinyFrontURL(
@@ -49,31 +61,28 @@ const PokeRight = ({ Screen, position }) => {
         setCompletedImgShinyBackURL(
           baseImgShinyBacktURL + response.data.id + ".png"
         );
+        setPokemon(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, [setPokemon]);
+  }, [namePokemon]);
 
   //Display the Pokemon
   useEffect(() => {
-    if (pokemon) {
+    console.log("Pokemon: ");
+    console.log(pokemon);
+    if (isOn) {
       setDisplayPokemon(
         <div className="screen">
-          <div>
-            <p className="name">pikachu</p>
+          <p className="name">{pokemon.name}</p>
+          <div className="imgOther">
+            <ImagesPokemon image={completedImgFrontURL} />
+            <ImagesPokemon image={completedImgBackURL} />
+            <ImagesPokemon image={completedImgShinyFrontURL} />
+            <ImagesPokemon image={completedImgShinyBackURL} />
           </div>
-          <div className="images">
-            <div className="imgFront">
-              <img src={completedImgFrontURL} />
-            </div>
-            <div className="imgOther">
-              <img src={completedImgBackURL} />
-              <img src={completedImgShinyFrontURL} />
-              <img src={completedImgShinyBackURL} />
-            </div>
-          </div>
-          <div>
+          <div className="divTable">
             <table>
               <tbody>
                 <tr>
@@ -88,7 +97,7 @@ const PokeRight = ({ Screen, position }) => {
                   <td>
                     <sup>{pokemon.weight / 10} kg</sup>
                   </td>
-                  <td>
+                  <td className="types">
                     {pokemon.types.map((item, index) => {
                       return (
                         <sup key={index} className="type">
@@ -104,7 +113,7 @@ const PokeRight = ({ Screen, position }) => {
         </div>
       );
     }
-  }, [positionPokemon]);
+  }, [pokemon]);
 
   return (
     <div className="pokeindex-right">

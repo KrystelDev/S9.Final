@@ -25,7 +25,9 @@ const PokedexTemplate = () => {
     borderStyle: `dashed`,
     top: `${position * -58}px`,
   };
-
+  let [namePokemon, setNamePokemon] = useState("zapdos");
+  // PokeRaight/Screen
+  let [displayPokemon, setDisplayPokemon] = useState(<div></div>);
   //2- Turn on and turn off
   function changeIsOn() {
     if (isOn) {
@@ -103,6 +105,7 @@ const PokedexTemplate = () => {
         break;
 
       default:
+        setDisplayPokemon(<div></div>);
         setViewList("");
         setPlaceholder("");
         setTag("On");
@@ -129,7 +132,16 @@ const PokedexTemplate = () => {
         subtractPosition={subtractPosition}
       />
       <div className="pokeindex-middle"></div>
-      <PokeRight Screen={Screen} position={position} />
+      <PokeRight
+        Screen={Screen}
+        position={position}
+        isOn={isOn}
+        list={list}
+        namePokemon={namePokemon}
+        setNamePokemon={setNamePokemon}
+        displayPokemon={displayPokemon}
+        setDisplayPokemon={setDisplayPokemon}
+      />
     </div>
   );
 };

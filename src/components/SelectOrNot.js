@@ -1,6 +1,4 @@
 const SelectOrNot = ({ viewDisplayPokemon }) => {
-  // function only when isOn === true (context)
-
   return (
     <div className="pokeindex-right__buttons-double">
       <button type="button" onClick={viewDisplayPokemon}>

@@ -12,7 +12,7 @@ const PokeLeft = ({
   subtractPosition,
 }) => {
   return (
-    <div className="pokeindex-left">
+    <div className="pokeindex-left absolute">
       <div className="pokeindex-left__top">
         <div className="circle-big"></div>
         <div className="circle-small"></div>

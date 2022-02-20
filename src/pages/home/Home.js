@@ -7,7 +7,7 @@ const PokedexTemplate = () => {
   return (
     <Fragment>
       <Link to="/Open">
-        <div className="pokeindex">
+        <div className="pokeindex absolute">
           <div className="pokeindex-left">
             <div className="pokeindex-left__top">
               <div className="circle-big"></div>

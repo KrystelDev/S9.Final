@@ -32,7 +32,7 @@ body {
 
 /******************************* Start All pages of Pokedex ********************************/
 /* Layout based on: https://codepen.io/alinas_view/pen/OJyKgZW */
-.pokeindex * {
+.absolute * {
   position: absolute;
 }
 
@@ -532,6 +532,49 @@ body {
   display: flex;
   flex-flow: row wrap;
   align-content: flex-end;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  object-fit: none;
+}
+
+.images {
+  display: flex;
+}
+
+.name {
+  margin: 0 auto;
+  font-size: x-large;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.imgOther {
+  display: flex;
+  flex-direction: initial;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.pokeindex-right__screen > .screen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+
+.divTable {
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+
+.types {
+  display: flex;
+  flex-direction: column;
 }
 
 .pokeindex-right__buttons span {
