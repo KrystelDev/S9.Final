@@ -1,6 +1,6 @@
-const ImagesPokemon = (image) => {
+const ImagesPokemon = ({ image }) => {
   console.log(image);
-  return <img src={image.image} />;
+  return <img src={image} />;
 };
 
 export default ImagesPokemon;
