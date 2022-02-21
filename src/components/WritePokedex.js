@@ -28,7 +28,7 @@ const WritePokedex = ({
   const search = (e) => {
     e.preventDefault();
     if (list) {
-      setEncontrar(list.findIndex((i) => i.name == lookForWrite));
+      setEncontrar(list.findIndex((i) => i.name == lookForWrite.toLowerCase()));
     }
   };
 
