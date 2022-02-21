@@ -160,15 +160,17 @@ body {
 .pokeindex-left__screen {
   height: 60%;
   width: 85%;
-  border: 2px solid var(--bg-black);
-  background-color: var(--bg-white);
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
-  border-radius: 5px 5px 5px 5px;
   position: relative;
+}
+.pokeindex-left__screen > img {
+  object-fit: cover;
+  width: 100%;
+  height: 50%;
 }
 
 .viewList {

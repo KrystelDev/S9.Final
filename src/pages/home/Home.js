@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
+import Logo from "../../img/LogoPokemon.png";
 
 // Layout inspirado en : https://codepen.io/alinas_view/pen/OJyKgZW
 
@@ -13,7 +14,9 @@ const PokedexTemplate = () => {
               <div className="circle-big"></div>
               <div className="circle-small"></div>
             </div>
-            <div className="pokeindex-left__screen">PORTADA</div>
+            <div className="pokeindex-left__screen">
+              <img src={Logo} alt="Pokèmon" />
+            </div>
           </div>
           <div className="pokeindex-middle"></div>
         </div>
