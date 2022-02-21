@@ -43,8 +43,6 @@ const PokeRight = ({
 
   //Selected images
   useEffect(() => {
-    console.log("namePokemon: ");
-    console.log(namePokemon);
     axios({
       url: completedDataUR,
     })
@@ -66,17 +64,18 @@ const PokeRight = ({
 
   //Display the Pokemon
   useEffect(() => {
-    console.log("Pokemon: ");
-    console.log(pokemon);
     if (isOn) {
       setDisplayPokemon(
         <div className="screen">
           <p className="name">{pokemon.name}</p>
           <div className="imgOther">
-            <ImagesPokemon image={completedImgFrontURL} />
-            <ImagesPokemon image={completedImgBackURL} />
-            <ImagesPokemon image={completedImgShinyFrontURL} />
-            <ImagesPokemon image={completedImgShinyBackURL} />
+            <ImagesPokemon image={completedImgFrontURL} pokemon={pokemon} />
+            <ImagesPokemon image={completedImgBackURL} pokemon={pokemon} />
+            <ImagesPokemon
+              image={completedImgShinyFrontURL}
+              pokemon={pokemon}
+            />
+            <ImagesPokemon image={completedImgShinyBackURL} pokemon={pokemon} />
           </div>
           <div className="divTable">
             <table>

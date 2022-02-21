@@ -38,7 +38,6 @@ const WritePokedex = ({
       setPosition(encontrar);
     } else {
       setWarning(true);
-      console.log("No existe");
     }
   }, [encontrar]);
 
