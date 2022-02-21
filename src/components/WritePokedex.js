@@ -1,5 +1,5 @@
 import { Fragment, useState, useEffect } from "react";
-import SearchIcon from "@mui/icons-material/Search";
+import Search from "../img/Search.png";
 
 const WritePokedex = ({
   placeholder,
@@ -23,11 +23,11 @@ const WritePokedex = ({
             Mostrar mensaje: ...
     } */
 
-  useEffect(() => {
+  function search() {
     if (list) {
       setEncontrar(list.findIndex((i) => i.name == lookForWrite));
     }
-  }, [lookForWrite]);
+  }
 
   useEffect(() => {
     if (isOn) {
@@ -51,7 +51,7 @@ const WritePokedex = ({
         }}
       ></input>
       <button>
-        <SearchIcon color="default" />
+        <img src={Search} onClick={search} />
       </button>
     </Fragment>
   );

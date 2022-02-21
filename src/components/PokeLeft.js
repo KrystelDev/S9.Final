@@ -44,14 +44,14 @@ const PokeLeft = ({
           <OnOff tag={tag} changeIsOn={changeIsOn} />
         </div>
         <div className="controller">
-          {/* <WritePokedex
+          <WritePokedex
             placeholder={placeholder}
             list={list}
             setPosition={setPosition}
             encontrar={encontrar}
             setEncontrar={setEncontrar}
             isOn={isOn}
-          /> */}
+          />
           <JoyStick
             addPosition={addPosition}
             subtractPosition={subtractPosition}

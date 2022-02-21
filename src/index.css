@@ -270,6 +270,24 @@ body {
   top: 10px;
 }
 
+.controller > button {
+  left: 88px;
+  height: 35px;
+  width: 35px;
+  top: 12px;
+  border-width: 4px;
+  cursor: pointer;
+  background-color: grey;
+}
+
+.controller > button > img {
+  left: 3px;
+  height: 21px;
+  width: auto;
+  top: 3px;
+  object-fit: contain;
+}
+
 /* ***** Start component joy-stick ***** */
 /* Layout based on: https://codepen.io/daniel-snows/pen/JjPLNZp */
 .joy-stick {
