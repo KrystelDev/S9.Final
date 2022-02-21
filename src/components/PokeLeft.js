@@ -15,7 +15,8 @@ const PokeLeft = ({
   setPosition,
   encontrar,
   setEncontrar,
-  isOn,
+  lookForWrite,
+  setLookForWrite,
 }) => {
   return (
     <div className="pokeindex-left absolute">
@@ -50,7 +51,8 @@ const PokeLeft = ({
             setPosition={setPosition}
             encontrar={encontrar}
             setEncontrar={setEncontrar}
-            isOn={isOn}
+            lookForWrite={lookForWrite}
+            setLookForWrite={setLookForWrite}
           />
           <JoyStick
             addPosition={addPosition}

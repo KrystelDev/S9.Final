@@ -7,9 +7,11 @@ const WritePokedex = ({
   setPosition,
   encontrar,
   setEncontrar,
-  isOn,
+  lookForWrite,
+  setLookForWrite,
 }) => {
-  let [lookForWrite, setLookForWrite] = useState("");
+  const [warning, setWarning] = useState(false);
+  const messWarning = <div className="warning">* No encontrado</div>;
 
   /* Saber si existe el nombre en la lista:
         setLookForWrite(e.target.value)
@@ -23,24 +25,26 @@ const WritePokedex = ({
             Mostrar mensaje: ...
     } */
 
-  function search() {
+  const search = (e) => {
+    e.preventDefault();
     if (list) {
       setEncontrar(list.findIndex((i) => i.name == lookForWrite));
     }
-  }
+  };
 
   useEffect(() => {
-    if (isOn) {
-      if (encontrar > -1) {
-        setPosition(encontrar);
-      } else {
-        console.log("No existe");
-      }
+    if (encontrar > -1) {
+      setWarning(false);
+      setPosition(encontrar);
+    } else {
+      setWarning(true);
+      console.log("No existe");
     }
   }, [encontrar]);
 
   return (
     <Fragment>
+      {warning && messWarning}
       <input
         type="text"
         placeholder={placeholder}
@@ -50,8 +54,8 @@ const WritePokedex = ({
           setLookForWrite(e.target.value);
         }}
       ></input>
-      <button>
-        <img src={Search} onClick={search} />
+      <button type="submit" onClick={search}>
+        <img src={Search} alt="seacrh" />
       </button>
     </Fragment>
   );

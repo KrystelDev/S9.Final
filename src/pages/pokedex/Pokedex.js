@@ -30,6 +30,7 @@ const PokedexTemplate = () => {
   let [displayPokemon, setDisplayPokemon] = useState(<div></div>);
   // WritePokedex
   const [encontrar, setEncontrar] = useState();
+  let [lookForWrite, setLookForWrite] = useState("");
 
   //2- Turn on and turn off
   function changeIsOn() {
@@ -124,6 +125,7 @@ const PokedexTemplate = () => {
         setDisplayPokemon(<div></div>);
         //WritePokedex
         setEncontrar("");
+        setLookForWrite("");
         break;
     }
   }, [isOn, position]);
@@ -143,7 +145,8 @@ const PokedexTemplate = () => {
         setPosition={setPosition}
         encontrar={encontrar}
         setEncontrar={setEncontrar}
-        isOn={isOn}
+        lookForWrite={lookForWrite}
+        setLookForWrite={setLookForWrite}
       />
       <div className="pokeindex-middle"></div>
       <PokeRight

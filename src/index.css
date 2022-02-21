@@ -267,14 +267,14 @@ body {
   background-color: var(--bg-lightgreen);
   border-radius: 5px;
   left: -9px;
-  top: 10px;
+  top: 25px;
 }
 
 .controller > button {
   left: 88px;
   height: 35px;
   width: 35px;
-  top: 12px;
+  top: 26px;
   border-width: 4px;
   cursor: pointer;
   background-color: grey;
@@ -286,6 +286,13 @@ body {
   width: auto;
   top: 3px;
   object-fit: contain;
+}
+
+.warning {
+  left: -4px;
+  top: 7px;
+  font-size: small;
+  color: white;
 }
 
 /* ***** Start component joy-stick ***** */
