@@ -24,7 +24,7 @@ const PokeLeft = ({
         <div className="circle-big"></div>
         <div className="circle-small"></div>
       </div>
-      <div className="pokeindex-left__screen">
+      <div className="pokeindex-left__screen white">
         <div className="dots">
           <span></span>
           <span></span>

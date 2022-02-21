@@ -167,6 +167,12 @@ body {
   justify-content: space-around;
   position: relative;
 }
+.white {
+  border: 2px solid var(--bg-black);
+  background-color: var(--bg-white);
+  border-radius: 5px 5px 5px 5px;
+}
+
 .pokeindex-left__screen > img {
   object-fit: cover;
   width: 100%;
