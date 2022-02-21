@@ -745,17 +745,17 @@ img {
   color: grey;
   cursor: pointer;
 }
-/****************************** Finished All pages of Pokedex *******************************/
 
-/* ******************************* PokedexOn *******************************
-.pokeindex-left__screen .status .green {
-  height: 50%;
-  width: 12%;
+.pokeindex-right__buttons-double > a > button {
+  width: 150%;
+  height: 43px;
   border: 2px solid var(--bg-black);
-  background-color: var(--bg-lightgreen);
-  border-radius: 50%;
+  background-color: var(--bg-darkgray);
   position: relative;
+  border-radius: 5px;
+  color: grey;
+  cursor: pointer;
+  left: -20px;
 }
-.green {
-  background-color: var(--bg-lightgreen);
-} */
+
+/************************** Finished All pages of Pokedex ***************************/
