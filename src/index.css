@@ -577,7 +577,6 @@ joy-stick button.right {
 img {
   width: 50px;
   height: 50px;
-  object-fit: none;
 }
 
 .images {

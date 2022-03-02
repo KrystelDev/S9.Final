@@ -14,7 +14,7 @@ Triar la temàtica del projecte, així com els passos per a dur-lo a terme. Nom�
 - Protegir les rutes, bé perquè hi hagi un usuari administrador que pot només veure ell una part, o perquè hi hagi usuaris normals i premium.
 - La solució ha d'estar ben maquetada i ser responsive.
 
-## En Contrucción:
+## Visualización de la Pokedex:
 
 <img
     src="./src/img/LayoutOn.png"
